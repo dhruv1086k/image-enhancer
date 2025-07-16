@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  /* COLORS */
+  --color-primary: #fff;
+}
+/* FONTS */
+@font-face {
+  font-family: "chillax";
+  src: url("/fonts/Chillax-Medium.woff") format("woff");
+}
