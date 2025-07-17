@@ -15,14 +15,16 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="w-full h-[15vh] flex justify-between px-32 font-[chillax] max-xl:px-10">
-      <div className="w-1/5 flex items-center max-lg:w-3/5">
-        <img src={assets.logo} alt="" className="h-2/4 w-auto" />
+    <div className="w-full h-[15vh] max-md:h-[10vh] flex justify-between px-32 font-[chillax] max-xl:px-10 max-sm:px-3">
+      <div className="w-1/5 flex items-center max-lg:w-3/5 relative z-50">
+        <img src={assets.logo} alt="" className="h-2/4 w-auto max-sm:h-3/5" />
       </div>
       <ul
         className={`w-3/5 flex justify-center items-center gap-14 max-xl:gap-9 max-lg:absolute ${
-          openMenu ? "max-lg:right-0" : "max-lg:-right-[300px]"
-        } max-lg:w-[300px] max-lg:h-full max-lg:flex-col max-lg:gap-16 transition-all duration-500 ease-linear  max-lg:shadow-2xl`}
+          openMenu
+            ? "max-lg:right-0"
+            : "max-lg:-right-[300px] max-sm:-right-full"
+        } max-lg:w-[300px] max-sm:w-screen max-lg:h-full max-lg:flex-col max-lg:gap-16 transition-all duration-500 ease-linear  max-lg:shadow-2xl max-lg:bg-white max-lg:rounded-tl-2xl max-lg:rounded-bl-2xl z-10`}
       >
         {navLinks.map((link) => (
           <li key={link.id}>
@@ -53,12 +55,12 @@ const Navbar = () => {
           >
             {openMenu ? (
               <IoClose
-                className="text-4xl cursor-pointer"
+                className="text-4xl max-sm:text-3xl cursor-pointer"
                 onClick={() => setOpenMenu((prev) => !prev)}
               />
             ) : (
               <IoMenu
-                className="text-4xl cursor-pointer"
+                className="text-4xl max-sm:text-3xl cursor-pointer"
                 onClick={() => setOpenMenu((prev) => !prev)}
               />
             )}

@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+body {
+  overflow-x: hidden;
+}
+
 @theme {
   /* COLORS */
   --color-primary: #fff;
@@ -8,4 +12,9 @@
 @font-face {
   font-family: "chillax";
   src: url("/fonts/Chillax-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: "voyage";
+  src: url("/fonts/voyage.otf") format("opentype");
 }
