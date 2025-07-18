@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
-body {
+body,
+html {
   overflow-x: hidden;
 }
 
@@ -17,4 +18,52 @@ body {
 @font-face {
   font-family: "voyage";
   src: url("/fonts/voyage.otf") format("opentype");
+}
+
+.underlineLinkBtn {
+  position: relative;
+  overflow: hidden;
+  padding: 5px 0;
+}
+
+.underlineLinkBtn::after {
+  content: "";
+  position: absolute;
+  background-color: black;
+  width: 100%;
+  height: 1.5px;
+  top: 90%;
+  left: -100%;
+  transition: all 0.2s;
+}
+
+.underlineLinkBtn:hover::after {
+  left: 0%;
+}
+
+@keyframes bounce-custom {
+  0%,
+  20%,
+  53%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40%,
+  43% {
+    transform: translateY(-10px);
+  }
+  70% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-bounce-custom {
+  animation: bounce-custom infinite;
+}
+
+@media (max-width: 768px) {
+  .animate-none {
+    animation: none !important;
+  }
 }

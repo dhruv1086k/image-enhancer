@@ -15,16 +15,17 @@ const Navbar = () => {
   ];
 
   return (
-    <div className="w-full h-[15vh] max-md:h-[10vh] flex justify-between px-32 font-[chillax] max-xl:px-10 max-sm:px-3">
+    // Add overflow-x-hidden to the main container
+    <div className="w-full h-[15vh] max-md:h-[10vh] flex justify-between px-32 font-[chillax] max-xl:px-10 max-sm:px-3 relative overflow-x-hidden">
       <div className="w-1/5 flex items-center max-lg:w-3/5 relative z-50">
         <img src={assets.logo} alt="" className="h-2/4 w-auto max-sm:h-3/5" />
       </div>
+
+      {/* Fixed mobile menu */}
       <ul
-        className={`w-3/5 flex justify-center items-center gap-14 max-xl:gap-9 max-lg:absolute ${
-          openMenu
-            ? "max-lg:right-0"
-            : "max-lg:-right-[300px] max-sm:-right-full"
-        } max-lg:w-[300px] max-sm:w-screen max-lg:h-full max-lg:flex-col max-lg:gap-16 transition-all duration-500 ease-linear  max-lg:shadow-2xl max-lg:bg-white max-lg:rounded-tl-2xl max-lg:rounded-bl-2xl z-10`}
+        className={`w-3/5 flex justify-center items-center gap-14 max-xl:gap-9 max-lg:fixed max-lg:top-0 ${
+          openMenu ? "max-lg:right-0" : "max-lg:-right-full"
+        } max-lg:w-[280px] max-sm:w-[100vw] max-lg:h-full max-lg:flex-col max-lg:gap-16 transition-all duration-500 ease-linear max-lg:shadow-2xl max-lg:bg-white max-lg:rounded-tl-2xl max-lg:rounded-bl-2xl z-40`}
       >
         {navLinks.map((link) => (
           <li key={link.id}>
@@ -43,7 +44,8 @@ const Navbar = () => {
           Get Started
         </button>
       </ul>
-      <div className="w-1/5 relative z-10 flex justify-end items-center max-lg:gap-10 max-lg:w-2/5">
+
+      <div className="w-1/5 relative z-50 flex justify-end items-center max-lg:gap-10 max-lg:w-2/5">
         <button className="bg-[#161616] text-primary px-8 py-2 max-lg:px-5 max-lg:py-1 rounded-md cursor-pointer whitespace-nowrap max-lg:hidden">
           Get Started
         </button>
