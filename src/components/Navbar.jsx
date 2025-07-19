@@ -14,11 +14,17 @@ const Navbar = () => {
     { id: "use", label: "Use" },
   ];
 
+  const handleNavClick = (id) => {
+    setActive(id);
+    setOpenMenu(false); // Close mobile menu if open
+  };
+
   return (
-    // Add overflow-x-hidden to the main container
-    <div className="w-full h-[15vh] max-md:h-[10vh] flex justify-between px-32 font-[chillax] max-xl:px-10 max-sm:px-3 relative overflow-x-hidden">
+    <div className="w-full h-[15vh] max-md:h-[10vh] flex justify-between px-32 font-[chillax] max-xl:px-10 max-sm:px-3 fixed z-50 bg-white overflow-x-hidden">
       <div className="w-1/5 flex items-center max-lg:w-3/5 relative z-50">
-        <img src={assets.logo} alt="" className="h-2/4 w-auto max-sm:h-3/5" />
+        <a href="#home" className="h-2/4 max-sm:h-3/5">
+          <img src={assets.logo} alt="" className="h-full w-auto" />
+        </a>
       </div>
 
       {/* Fixed mobile menu */}
@@ -30,8 +36,8 @@ const Navbar = () => {
         {navLinks.map((link) => (
           <li key={link.id}>
             <a
-              href="#"
-              onClick={() => setActive(link.id)}
+              href={`#${link.id}`}
+              onClick={() => handleNavClick(link.id)}
               className={`${
                 active === link.id && "rounded-md bg-[#C6FB50]"
               } px-5 py-1 transition-all duration-500 ease-in-out`}

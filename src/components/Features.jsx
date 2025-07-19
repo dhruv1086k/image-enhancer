@@ -23,7 +23,7 @@ const Features = () => {
   ];
 
   return (
-    <div>
+    <div id="feature">
       <div className="grid relative grid-cols-[0.5fr_1fr_1.5fr_repeat(2,1fr)] grid-rows-[1fr_1.5fr_0.5fr_1fr_1fr] max-lg:grid-cols-4 max-lg:grid-rows-6 max-md:grid-cols-1 max-md:grid-rows-4 w-full h-[80vh] mt-10 gap-6 z-30">
         <div
           className="bg-red-300 col-start-1 col-end-4 row-start-1 row-end-3 max-lg:col-start-1 max-lg:col-end-5 max-lg:row-start-1 max-lg:row-end-3 max-md:col-start-1 max-md:col-end-2 max-md:row-start-1 max-md:row-end-2 rounded-3xl bg-cover bg-no-repeat bg-right text-white p-8 max-lg:p-5 max-md:p-3"

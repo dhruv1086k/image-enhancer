@@ -11,7 +11,7 @@ const Use = () => {
   };
 
   return (
-    <div>
+    <div id="use">
       <div className="min-h-[60vh] md:h-auto relative w-full bg-[#C6FB50] my-6 md:my-12 rounded-2xl md:rounded-4xl overflow-hidden">
         {/* Background decorative images */}
         <img

@@ -6,7 +6,7 @@ import { LuSendHorizontal } from "react-icons/lu";
 
 const Hero = () => {
   return (
-    <div className="w-full h-[75vh] max-sm:h-[75vh]">
+    <div className="w-full h-[75vh] max-sm:h-[75vh]" id="home">
       <div className="text-center w-full space-y-6 bg-gradient-to-b from-[#C6FB50] to-white rounded-2xl py-16 relative">
         {/* Hovering Images */}
         <img

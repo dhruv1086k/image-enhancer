@@ -3,12 +3,14 @@
 body,
 html {
   overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
 @theme {
   /* COLORS */
   --color-primary: #fff;
 }
+
 /* FONTS */
 @font-face {
   font-family: "chillax";
@@ -23,6 +25,24 @@ html {
 @font-face {
   font-family: "bitterRose";
   src: url("/fonts/BitterRose.otf") format("opentype");
+}
+
+/* Navigation scroll offset - accounts for fixed navbar + 20px extra */
+#home,
+#feature,
+#testimonial,
+#use {
+  scroll-margin-top: 140px; /* Desktop: navbar height + 20px offset */
+}
+
+/* Responsive scroll offset for mobile */
+@media (max-width: 768px) {
+  #home,
+  #feature,
+  #testimonial,
+  #use {
+    scroll-margin-top: 100px; /* Mobile: smaller navbar height + 20px offset */
+  }
 }
 
 .outlined-text {

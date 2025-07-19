@@ -6,7 +6,7 @@ import Use from "../components/Use";
 
 const Home = () => {
   return (
-    <div className="w-full px-32 max-xl:px-10 max-sm:px-3 font-[chillax]">
+    <div className="w-full pt-32 max-md:pt-22 max-sm:pt-24 px-32 max-xl:px-10 max-sm:px-3 font-[chillax]">
       <Hero />
       <Features />
       <Testimonials />

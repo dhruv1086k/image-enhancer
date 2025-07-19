@@ -45,24 +45,26 @@ export function Testimonials() {
     },
   ];
   return (
-    <DraggableCardContainer className="relative mt-24 flex min-h-[70vh] w-full items-center justify-center overflow-clip">
-      <p className="absolute top-1/2 mx-auto max-w-lg -translate-y-3/4 text-center text-4xl font-black  md:text-7xl font-[bitterRose] outlined-text">
-        If growth had a face, this would be it - transformative, real, and
-        unforgettable.
-      </p>
-      {items.map((item) => (
-        <DraggableCardBody className={item.className}>
-          <img
-            src={assets[item.image]}
-            alt={item.title}
-            className="pointer-events-none relative z-10 h-40 w-80 object-cover"
-          />
-          <h3 className="mt-4 text-center text-2xl font-bold text-neutral-700 dark:text-neutral-300">
-            {item.title}
-          </h3>
-          <p className="text-white">{item.text}</p>
-        </DraggableCardBody>
-      ))}
-    </DraggableCardContainer>
+    <div id="testimonial">
+      <DraggableCardContainer className="relative mt-24 flex min-h-[70vh] w-full items-center justify-center overflow-clip">
+        <p className="absolute top-1/2 mx-auto max-w-lg -translate-y-3/4 text-center text-4xl font-black  md:text-7xl font-[bitterRose] outlined-text">
+          If growth had a face, this would be it - transformative, real, and
+          unforgettable.
+        </p>
+        {items.map((item) => (
+          <DraggableCardBody className={item.className}>
+            <img
+              src={assets[item.image]}
+              alt={item.title}
+              className="pointer-events-none relative z-10 h-40 w-80 object-cover"
+            />
+            <h3 className="mt-4 text-center text-2xl font-bold text-neutral-700 dark:text-neutral-300">
+              {item.title}
+            </h3>
+            <p className="text-white">{item.text}</p>
+          </DraggableCardBody>
+        ))}
+      </DraggableCardContainer>
+    </div>
   );
 }
