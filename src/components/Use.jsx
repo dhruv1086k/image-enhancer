@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { assets } from "../assets/assets";
 import { PiStarFourFill } from "react-icons/pi";
 
 const Use = () => {
+  const [activeOverlay, setActiveOverlay] = useState(null);
+
+  const handleImageClick = (imageId) => {
+    // Toggle overlay - if clicked image is already active, hide it, otherwise show it
+    setActiveOverlay(activeOverlay === imageId ? null : imageId);
+  };
+
   return (
     <div>
       <div className="min-h-[60vh] md:h-auto relative w-full bg-[#C6FB50] my-6 md:my-12 rounded-2xl md:rounded-4xl overflow-hidden">
@@ -15,7 +22,7 @@ const Use = () => {
         <img
           src={assets.squareImg2}
           alt=""
-          className="absolute top-0 right-0 w-20 sm:w-24 md:w-32 lg:w-40 z-10"
+          className="absolute top-0 right-0 w-20 sm:w-24 md:w-32 lg:w-40 z-10 max-sm:top-96"
         />
 
         {/* Main content */}
@@ -32,10 +39,17 @@ const Use = () => {
           <div className="flex flex-col lg:flex-row justify-center items-center gap-4 sm:gap-6 md:gap-8 w-full max-w-7xl">
             {/* Step 1 */}
             <div className="flex flex-col lg:flex-row items-center gap-2 sm:gap-4">
-              <div className="relative w-28 sm:w-32 md:w-36 lg:w-40 h-auto border border-black rounded-2xl md:rounded-3xl shadow-lg sm:shadow-2xl overflow-hidden group cursor-pointer">
+              <div
+                className="relative w-28 sm:w-32 md:w-36 lg:w-40 h-auto border border-black rounded-2xl md:rounded-3xl shadow-lg sm:shadow-2xl overflow-hidden group cursor-pointer"
+                onClick={() => handleImageClick("step1")}
+              >
                 <img src={assets.useImg1} alt="" className="w-full h-auto" />
                 <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+                  className={`absolute inset-0 ${
+                    activeOverlay === "step1"
+                      ? "opacity-100"
+                      : "opacity-0 group-hover:opacity-100"
+                  } transition-opacity duration-300 flex items-center justify-center`}
                   style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
                 >
                   <span className="text-white text-sm sm:text-base md:text-lg font-medium text-center px-2">
@@ -54,10 +68,17 @@ const Use = () => {
 
             {/* Step 2 */}
             <div className="flex flex-col lg:flex-row items-center gap-2 sm:gap-4">
-              <div className="relative w-48 sm:w-56 md:w-72 lg:w-96 h-auto rounded-2xl md:rounded-4xl overflow-hidden group cursor-pointer">
+              <div
+                className="relative w-48 sm:w-56 md:w-72 lg:w-96 h-auto rounded-2xl md:rounded-4xl overflow-hidden group cursor-pointer"
+                onClick={() => handleImageClick("step2")}
+              >
                 <img src={assets.useImg2} alt="" className="w-full h-auto" />
                 <div
-                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+                  className={`absolute inset-0 ${
+                    activeOverlay === "step2"
+                      ? "opacity-100"
+                      : "opacity-0 group-hover:opacity-100"
+                  } transition-opacity duration-300 flex items-center justify-center`}
                   style={{ backgroundColor: "rgba(0, 0, 0, 0.8)" }}
                 >
                   <span className="text-white text-sm sm:text-base md:text-lg lg:text-xl font-medium text-center px-4">
@@ -79,14 +100,21 @@ const Use = () => {
             {/* Step 3 - Multiple results */}
             <div className="flex flex-row lg:flex-col justify-center items-center gap-2 sm:gap-3 md:gap-4 w-full lg:w-auto max-w-md lg:max-w-none">
               <div className="flex flex-col gap-2 sm:gap-3 w-1/3 lg:w-[100px] xl:w-[120px] 2xl:w-[150px]">
-                <div className="relative w-full h-auto aspect-square border border-black rounded-xl sm:rounded-2xl md:rounded-3xl shadow-lg sm:shadow-2xl overflow-hidden group cursor-pointer">
+                <div
+                  className="relative w-full h-auto aspect-square border border-black rounded-xl sm:rounded-2xl md:rounded-3xl shadow-lg sm:shadow-2xl overflow-hidden group cursor-pointer"
+                  onClick={() => handleImageClick("step3a")}
+                >
                   <img
                     src={assets.useImg3}
                     alt=""
                     className="w-full h-full object-cover"
                   />
                   <div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+                    className={`absolute inset-0 ${
+                      activeOverlay === "step3a"
+                        ? "opacity-100"
+                        : "opacity-0 group-hover:opacity-100"
+                    } transition-opacity duration-300 flex items-center justify-center`}
                     style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
                   >
                     <span className="text-white text-xs sm:text-sm font-medium text-center px-1">
@@ -96,14 +124,21 @@ const Use = () => {
                 </div>
               </div>
               <div className="flex flex-col gap-2 sm:gap-3 w-1/3 lg:w-[100px] xl:w-[120px] 2xl:w-[150px]">
-                <div className="relative w-full h-auto aspect-square border border-black rounded-xl sm:rounded-2xl md:rounded-3xl shadow-lg sm:shadow-2xl overflow-hidden group cursor-pointer">
+                <div
+                  className="relative w-full h-auto aspect-square border border-black rounded-xl sm:rounded-2xl md:rounded-3xl shadow-lg sm:shadow-2xl overflow-hidden group cursor-pointer"
+                  onClick={() => handleImageClick("step3b")}
+                >
                   <img
                     src={assets.useImg4}
                     alt=""
                     className="w-full h-full object-cover"
                   />
                   <div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+                    className={`absolute inset-0 ${
+                      activeOverlay === "step3b"
+                        ? "opacity-100"
+                        : "opacity-0 group-hover:opacity-100"
+                    } transition-opacity duration-300 flex items-center justify-center`}
                     style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
                   >
                     <span className="text-white text-xs sm:text-sm font-medium text-center px-1">
@@ -113,14 +148,21 @@ const Use = () => {
                 </div>
               </div>
               <div className="flex flex-col gap-2 sm:gap-3 w-1/3 lg:w-[100px] xl:w-[120px] 2xl:w-[150px]">
-                <div className="relative w-full h-auto aspect-square border border-black rounded-xl sm:rounded-2xl md:rounded-3xl shadow-lg sm:shadow-2xl overflow-hidden group cursor-pointer">
+                <div
+                  className="relative w-full h-auto aspect-square border border-black rounded-xl sm:rounded-2xl md:rounded-3xl shadow-lg sm:shadow-2xl overflow-hidden group cursor-pointer"
+                  onClick={() => handleImageClick("step3c")}
+                >
                   <img
                     src={assets.useImg5}
                     alt=""
                     className="w-full h-full object-cover"
                   />
                   <div
-                    className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center"
+                    className={`absolute inset-0 ${
+                      activeOverlay === "step3c"
+                        ? "opacity-100"
+                        : "opacity-0 group-hover:opacity-100"
+                    } transition-opacity duration-300 flex items-center justify-center`}
                     style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}
                   >
                     <span className="text-white text-xs sm:text-sm font-medium text-center px-1">
