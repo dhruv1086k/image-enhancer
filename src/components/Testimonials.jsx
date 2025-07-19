@@ -45,7 +45,7 @@ export function Testimonials() {
     },
   ];
   return (
-    <DraggableCardContainer className="relative mt-10 flex min-h-screen w-full items-center justify-center overflow-clip">
+    <DraggableCardContainer className="relative mt-24 flex min-h-[70vh] w-full items-center justify-center overflow-clip">
       <p className="absolute top-1/2 mx-auto max-w-lg -translate-y-3/4 text-center text-4xl font-black  md:text-7xl font-[bitterRose] outlined-text">
         If growth had a face, this would be it - transformative, real, and
         unforgettable.

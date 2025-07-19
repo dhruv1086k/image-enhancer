@@ -11,6 +11,15 @@ import TestiImg3 from "../assets/TestiImg3.png";
 import TestiImg4 from "../assets/TestiImg4.png";
 import TestiImg5 from "../assets/TestiImg5.png";
 import TestiImg6 from "../assets/TestiImg6.png";
+import squareImg1 from "../assets/squarePattern1.png";
+import squareImg2 from "../assets/squarePattern2.png";
+import useImg1 from "../assets/useImg1.png";
+import useImg2 from "../assets/useImg2.png";
+import useImg3 from "../assets/useImg3.png";
+import useImg4 from "../assets/useImg4.png";
+import useImg5 from "../assets/useImg5.png";
+import arrowOrange from "../assets/arrowOrange.png";
+import arrowBlue from "../assets/arrowBlue.png";
 
 export const assets = {
   logo,
@@ -26,4 +35,13 @@ export const assets = {
   TestiImg4,
   TestiImg5,
   TestiImg6,
+  squareImg1,
+  squareImg2,
+  useImg1,
+  useImg2,
+  useImg3,
+  useImg4,
+  useImg5,
+  arrowOrange,
+  arrowBlue,
 };
