@@ -20,6 +20,17 @@ html {
   src: url("/fonts/voyage.otf") format("opentype");
 }
 
+@font-face {
+  font-family: "bitterRose";
+  src: url("/fonts/BitterRose.otf") format("opentype");
+}
+
+.outlined-text {
+  color: white;
+  -webkit-text-stroke: 1px black;
+  text-stroke: 1px black; /* for future compatibility */
+}
+
 .underlineLinkBtn {
   position: relative;
   overflow: hidden;
