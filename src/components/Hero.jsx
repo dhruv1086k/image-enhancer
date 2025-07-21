@@ -3,8 +3,11 @@ import { PiStarFourFill } from "react-icons/pi";
 import { FaArrowDown } from "react-icons/fa";
 import { assets } from "../assets/assets";
 import { LuSendHorizontal } from "react-icons/lu";
+import { useNavigate } from "react-router-dom";
 
 const Hero = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="w-full h-[75vh] max-sm:h-[75vh]" id="home">
       <div className="text-center w-full space-y-6 bg-gradient-to-b from-[#C6FB50] to-white rounded-2xl py-16 relative">
@@ -53,8 +56,11 @@ const Hero = () => {
           <button className="bg-[#161616] text-white px-6 py-3 rounded-xl text-sm font-medium hover:opacity-90 transition cursor-pointer">
             Try Image Zen Now
           </button>
-          <button className="underlineLinkBtn text-[#161616] flex items-center justify-center gap-2 text-sm font-medium cursor-pointer">
-            View Before & After
+          <button
+            className="underlineLinkBtn text-[#161616] flex items-center justify-center gap-2 text-sm font-medium cursor-pointer"
+            onClick={() => navigate("/showcase")}
+          >
+            Showcase Images
             <LuSendHorizontal />
           </button>
         </div>
