@@ -28,7 +28,7 @@ const Navbar = () => {
       <div className="w-1/5 flex items-center max-lg:w-3/5 relative z-50">
         <a
           onClick={() => (navigate("/"), scrollTo(0, 0))}
-          className="h-2/4 max-sm:h-3/5"
+          className="h-2/4 max-sm:h-3/5 cursor-pointer"
         >
           <img src={assets.logo} alt="" className="h-full w-auto" />
         </a>
@@ -50,7 +50,7 @@ const Navbar = () => {
                 }}
                 className={`${
                   active === link.id && "rounded-md bg-[#C6FB50]"
-                } px-5 py-1 transition-all duration-500 ease-in-out`}
+                } px-5 py-1 transition-all duration-500 ease-in-out cursor-pointer`}
               >
                 {link.label}
               </a>
